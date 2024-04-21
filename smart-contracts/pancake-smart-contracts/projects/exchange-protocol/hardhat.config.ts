@@ -61,7 +61,7 @@ const config = {
       bsc: "HDCD9C44C7YRZGHE48WGHGUZW5DU1R2WKT",
       pulseTestnet: "0000000000000000000000000000000000",
       mumbai: "KMUEE12BAEC489N8J76FKZYA7ZKNRQMVZ4",
-      holesky: "2VPQC6NNB1AEJI2P3GQA73C9UZ823EFY3F"
+      holesky: "4a2f05e7-5de2-401d-8644-bdcc21631e08"
     },
     customChains: [
       {
@@ -94,6 +94,14 @@ const config = {
         urls: {
           apiURL: "https://api-testnet.polygonscan.com/api",
           browserURL: "https://mumbai.polygonscan.com/"
+        }
+      },
+      {
+        network: "holesky",
+        chainId: 17000,
+        urls: {
+          apiURL: "https://api-holesky.etherscan.io/api",
+          browserURL: "https://holesky.etherscan.io"
         }
       },
     ]

@@ -155,6 +155,14 @@ export default {
           browserURL: "https://mumbai.polygonscan.com/"
         }
       },
+      {
+        network: "holesky",
+        chainId: 17000,
+        urls: {
+          apiURL: "https://api-holesky.etherscan.io/api",
+          browserURL: "https://holesky.etherscan.io"
+        }
+      },
     ]
   },
   solidity: {

@@ -15,14 +15,14 @@ chain
  	- install husky
  		npm install -g husky
  	- .env
- 	
+		KEY_TESTNET=<Wallet PrivateKey>
  	2.1.2 exchange-protocol
  	- cd projects/exchange-protocol
  	- check hardhat.config.ts
  		ex) set testnet to <new chain>
  	- deploy
  		npx hardhat --network testnet run scripts/deploy-pancake-factory.ts
- 	- copy deployed contract address to "v2Factory" field in "pancake-v3-smart-contracts/common/config.ts"
+ 	- copy deployed contract address to "v2Factory" field in "pancake-v3-contracts/common/config.ts"
 
  	2.1.3 stable-swap
  	- cd projects/stable-swap
@@ -39,7 +39,7 @@ chain
  	- deploy SwapThreePoolDeployer
  		npx hardhat run scripts/deploy_swapThreePoolDeployer.ts --network <target network>
  		copy deployed address to 
- 		"stable-swap/config.ts" : "TwoPoolInfo"
+ 		"stable-swap/config.ts" : "ThreePoolInfo"
  	- deploy StableSwapFactory and StableInfo
  		npx hardhat run scripts/deploy.ts --network <target network>
  		copy deployed addresses to pancake-v3-contracts/common/config.ts : "stableFactory"
@@ -74,22 +74,23 @@ chain
  	- deploy
  		yarn hardhat run scripts/deploy2.ts --network <target network>
  	- verify
+		yarn hardhat run scripts/verify.ts --network <target network>
 
- 	2.2.3. router
+ 	2.2.4. router
  	- go to projects/router
  	- check hardhat.config.ts
  	- deploy & verify
  		yarn hardhat run scripts/deploy2.ts --network <target network>
  	- deployed addresses are saved in "deployment/<target network>.json" file.
 
- 	2.2.4. masterchef-v3
+ 	2.2.5. masterchef-v3
  	- go to projects/masterchef-v3
  	- check hardhat.config.ts
  	- deploy
  		yarn hardhat run scripts/deploy2.ts --network <target network>
  	- deployed address is saved to "deployment/<target network>.json"
 
- 	2.2.5. v3-lm-pool
+ 	2.2.6. v3-lm-pool
  	- go to projects/v3-lm-pool
  	- check hardhat.config.ts
  	- deploy
