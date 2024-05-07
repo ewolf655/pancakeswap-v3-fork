@@ -64,12 +64,12 @@ export const configs = {
   },
   holesky: {
     WNATIVE: '0x94373a4919B3240D86eA41593D5eBa789FEF3848',
-    nativeCurrencyLabel: 'ETH',
+    nativeCurrencyLabel: 'WETH',
     v2Factory: '0x0DD754099a9189eF1D55D4719f9C7d6D6A25E1E4',
     stableFactory: '0xa45096DFD27571e1f5421Cca028f76Cc65bc059C',
     stableInfo: '0x67861260bc85Fd6C3F6eb2BF213a40AEe70a1B27',
     cake: '0x075896e48636369e8d747e1Df01730EA1d4200AF',
-    smartRouterHelper: '??',
+    smartRouterHelper: '0x5e85B7e1a2133E42Ce4660A23F02cc176B21e394',
   },
   hardhat: {
     WNATIVE: '0x0000000000000000000000000000000000000000',

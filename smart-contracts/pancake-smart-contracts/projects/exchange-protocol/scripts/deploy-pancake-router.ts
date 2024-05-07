@@ -1,6 +1,7 @@
 import { ethers, network, run } from "hardhat";
 
-const FEE_SETTER = "0x3A6820EFaE83E90E2A33cBaB58425b6FF18b1acb"
+const factoryAddress = "0x0DD754099a9189eF1D55D4719f9C7d6D6A25E1E4"
+const ETHAddress = "0x94373a4919B3240D86eA41593D5eBa789FEF3848"
 
 const deploy = async (): Promise<string> => {
   // Compile contracts
@@ -20,17 +21,17 @@ const deploy = async (): Promise<string> => {
 
   console.log("Deploying to network:", networkName);
 
-  // Deploy PancakeFactory
-  console.log("Deploying PancakeFactory..");
+  // Deploy PancakeRouter
+  console.log("Deploying PancakeRouter..");
 
-  const PancakeFactory = await ethers.getContractFactory("PancakeFactory");
+  const PancakeRouter = await ethers.getContractFactory("PancakeRouter");
 
-  const pancackeFactory = await PancakeFactory.deploy(FEE_SETTER);
+  const PancackeRouter = await PancakeRouter.deploy(factoryAddress, ETHAddress);
 
-  await pancackeFactory.deployed();
+  await PancackeRouter.deployed();
 
-  console.log("PancackeFactory deployed to:", pancackeFactory.address);
-  return pancackeFactory.address;
+  console.log("PancackeRouter deployed to:", PancackeRouter.address);
+  return PancackeRouter.address;
 }
 
 const verify = async (address:string, parameter:any[] = []) => {
@@ -46,7 +47,7 @@ const main = async () => {
   const contractAddr = await deploy();
   await verify(
   contractAddr, 
-  [FEE_SETTER]);
+  [factoryAddress, ETHAddress]);
 };
 
 main()

@@ -61,7 +61,7 @@ const config = {
       bsc: "HDCD9C44C7YRZGHE48WGHGUZW5DU1R2WKT",
       pulseTestnet: "0000000000000000000000000000000000",
       mumbai: "KMUEE12BAEC489N8J76FKZYA7ZKNRQMVZ4",
-      holesky: "4a2f05e7-5de2-401d-8644-bdcc21631e08"
+      holesky: "72DZED968BFEP4SS1VTXBPDRRMZNESN3RM"
     },
     customChains: [
       {
